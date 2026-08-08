@@ -11,11 +11,11 @@ I've left some configs (mainly ones that I haven't changed much) out of here. I'
 - **btop** – system monitoring (terminal)
 - **cava** – audio visualizer (terminal)
 - **fastfetch** – display system information quickly (terminal)
-- *hypr* – contains configs for hyprland and related tools
-  - *hyprland.lua* – hyprland
-  - *hyprlock.conf* – lock screen
-  - *hypridle.conf* – idle tool (unused, might be outdated)
-  - *mocha.conf/lua* – color schemes for hyprland.lua and hyprlock.conf
+- **hypr** – contains configs for hyprland and related tools
+  - **hyprland.lua** – hyprland
+  - **hyprlock.conf** – lock screen
+  - **hypridle.conf** – idle tool
+  - **mocha.conf/lua** – color schemes for hyprland.lua and hyprlock.conf
 - **kitty** – terminal
 - **nvim** – code editor (LazyVim setup) (terminal)
 - **rmpc** – music player (uses mpd) (terminal)

@@ -57,7 +57,7 @@ local musicplayer = "kitty -e rmpc"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --all")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
-	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("awww-daemon & hypridle")
 	hl.exec_cmd("sleep 2 && wayle shell")
 	hl.exec_cmd("sleep 5 && vesktop -m")
 end)
