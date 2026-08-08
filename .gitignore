@@ -1,0 +1,14 @@
+.config/*
+
+!.config/btop/
+!.config/cava/
+!.config/fastfetch/
+!.config/hypr/
+!.config/kitty/
+!.config/nvim/
+!.config/rmpc/
+!.config/rofi/
+!.config/wayle/
+!.config/yazi/
+!.config/starship.toml/
+!.config/waybar/

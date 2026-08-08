@@ -1,0 +1,10 @@
+
+schema = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[mgr]
+show_hidden = false
+
+[opener]
+edit = [
+  { run = 'nvim "%s"', desc = "nvim",      for = "unix", block = true },
+]

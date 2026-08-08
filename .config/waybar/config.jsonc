@@ -1,0 +1,233 @@
+{
+  
+
+  "layer": "top",
+  
+    
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/lock",
+        "custom/reboot",
+        "custom/poweroff",
+        "custom/uptime",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "network",
+        "pulseaudio",
+        "wireplumber#source",
+        "backlight",
+	    "custom/notification",
+        "custom/system_monitor",
+        "tray",
+        "custom/weather",
+        "clock"
+    ],
+
+     
+   "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %b %d, %R}",
+        "tooltip-format": "<big>{:%H:%M:%S</big>\n%A %d.%m.%Y}\n————————————————————————\n<tt>{calendar}</tt>",
+        "interval":1,
+        "timezone-tooltip-format": "{:%H:%M %Z}",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+			            "months":     "<span color='#ffead3'><b>{}</b></span>",
+                        "days":       "<span color='#e8eaed'><b>{}</b></span>",
+                        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                    }
+                },
+        "actions":  {
+            "on-click-right": "mode"
+            // "on-click-middle": "tz_up"
+            // "on-scroll-up": "shift_up",
+            // "on-scroll-down": "shift_down"
+                
+        },
+        
+        // <small>{tz_list}</small>        
+        "timezones": [
+            "Europe/Helsinki",
+            "Etc/UTC",
+            "America/New_York",
+            "America/Los_Angeles",
+            "Asia/Tokyo"
+        ]
+    },
+
+
+    "cpu": {
+    "interval": 1,
+    //"format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format": " {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "kitty -e btop"
+    },
+
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": false,
+        "format": "<b>{}</b>",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+    },
+    
+        "persistent-workspaces": {
+            
+            //"*": 5 //5 workspaces by default on every monitor
+        }
+    },
+    "hyprland/window": {
+        "format": "{initialClass}",
+        "separate-outputs": true
+    },
+    
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol -t 3",
+        "on-click-right":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "{volume}% 󰍬",
+        "format-muted": "󰍭",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5,
+        "on-click": "pavucontrol -t 4"
+    },
+
+    "cava": {
+        "cava_config": "~/.config/cava/waybar_raw.conf",
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+
+
+    "network": {
+        //"interface": "",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        //"format-ethernet": "Ethernet 󰊗",
+        "format-ethernet": "Ethernet 󰈀",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "firewall-config"
+    },
+
+  "mpris": {
+	  "format": "{player_icon}  {title} - {artist}",
+	  "format-paused": "{status_icon}  <i>{title} - {artist}</i>",
+	  "player-icons": {
+		  "default": "",
+		  "mpv": "󰲸"
+	  },
+
+	  "status-icons": {
+		  "paused": ""
+	  },
+
+	  "ignored-players": ["firefox", "kdeconnect", "chromium"],
+    "interval": 1
+    },
+
+    "custom/uptime": {
+        "format": "{}",
+        "format-icon": [""], 
+        "tooltip": true,
+	    "tooltip-format": "Uptime since boot\n(click for fastfetch)",
+        "interval": 1800,
+        "exec": "/home/onni/.config/waybar/scripts/uptime.sh",
+        "on-click": "kitty --hold fastfetch"
+    },
+
+    // Weather
+    "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/weather.sh Lieto",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 7200,
+    "on-click":"kitty --hold curl https://wttr.in/Lieto?M"
+    },
+
+    // Tray
+    "tray": {
+    "icon-size": 14,
+    "spacing": 8,
+    "show-passive-items": true,
+    "reverse-direction": false,
+    "smooth-scrolling-threshold": 1.0
+    
+    },
+
+    /// Power icons ///
+
+    // Lock
+    "custom/lock": {
+    "tooltip": true,
+    "tooltip-format": "Lock",
+    "on-click": "sh -c hyprlock & disown",
+    "format" : ""     //"󰤄"        
+    },
+
+    // Reboot
+    "custom/reboot": {
+    "tooltip": true,
+    "tooltip-format": "Reboot",
+    "on-click": "sh -c 'systemctl reboot'",
+    "format": ""
+    },
+
+    // Power off
+    "custom/poweroff": {
+    "tooltip": true, "tooltip-format": "Power off", "on-click": "sh -c 'systemctl poweroff'",
+    "format": ""
+    }
+
+
+}

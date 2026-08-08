@@ -1,0 +1,6 @@
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+@import "rofi/colors.rasi"
+
+@import "template/my-template.rasi"

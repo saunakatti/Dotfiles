@@ -1,0 +1,39 @@
+
+/* Thanks Zilero for config */
+
+
+/* ---- Load colors ---- */
+@theme "colors.rasi"
+
+/* ---- Configuration ---- */
+configuration {
+    // Available modes
+    modi: "drun,run,window,emoji,filebrowser";
+    
+    // Font settings
+    font: "Noto Sans Nerd Font 14";
+    
+    // Icon settings
+    show-icons: true;   // Missing icons for YAMIS
+    icon-theme: "YAMIS";
+    
+    // Basic settings
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 0;                              // Center position
+    disable-history: false;
+    hide-scrollbar: false;
+    
+    // Mode display names with Nerd Font icons
+    display-drun: "󰍜   Apps";                    // Apps mode
+    display-run: "   Run";                      // Run mode
+    display-window: "󱂬   Windows ";                // Window switcher
+    display-filebrowser: "   Files";
+    display-emoji: "󰞅   Emojis";
+
+    // File Browser settings
+    filebrowser {
+        directory: "/home/onni/";
+        show-hidden: false;        // Shift + Del
+    }
+}

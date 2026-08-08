@@ -1,0 +1,176 @@
+@import "colors.css";
+
+/* * { all: initial; } */   /* Disable GTK theme, breaks some colors (Window and ws)? */ 
+
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font", "noto-sans";
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#waybar {
+   /* background: rgba(18, 18, 18, 0.5); */
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px  ;
+    padding: 0px 0px;
+}
+
+tooltip {
+  background: @base;
+  border: 2px solid @surface0;
+  border-radius: 10px 10px 10px 10px;
+}
+
+tooltip label {
+  color: @text
+}
+
+#workspaces button {
+    
+    background: transparent;
+    padding: 2px 5px;
+    border-radius: 0px 0px 0px 0px;
+    color: @overlay1;
+}
+
+#workspaces button.active {
+    
+  background: transparent;
+  border-radius: 0px 0px 0px 0px;
+  color: @lavender
+}
+
+.modules-center {
+  padding: 0px;
+  margin-top: 6px;
+  border-radius: 15px 15px 15px 15px;
+  background: @base;
+  border: 2px solid @surface0;
+}
+
+.modules-right {
+  padding-left: 0px;
+  border-radius: 15px 15px 15px 15px;
+  margin-top: 6px;
+  margin-right: 7px;
+  background: @base;
+  border: 2px solid @surface0;
+
+}
+
+.modules-left {
+  border-radius: 15px 15px 15px 15px;
+  margin-top: 6px;
+  margin-left: 7px;
+  background: @base;
+  border: 2px solid @surface0;
+
+
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+
+#tray,
+#mpris,
+#clock,
+#battery,
+#window,
+#cpu,
+#workspaces,
+#custom-uptime,
+#custom-weather,
+#network {
+    padding: 0px 10px;
+    margin: 3px;
+    background-color: @surface0;
+    border-radius: 10px 10px 10px 10px
+}
+
+/* Module colors */
+
+#tray {
+  color: @peach
+}
+
+#mpris {
+  color: @lavender
+}
+
+#window {
+  color: @lavender
+}
+
+#pulseaudio {
+  color: @yellow
+}
+
+#network {
+  color: @green
+}
+
+#cpu {
+  color: @teal
+}
+
+#custom-weather {
+  color: @flamingo
+}
+
+#clock {
+  color: @pink
+}
+
+#custom-uptime {
+  color: @lavender
+}
+
+/* Power thing combination */
+
+#custom-lock {
+  color: @yellow;
+  margin: 3px 0px 3px 3px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px 0px 15px;
+  background-color: @surface0
+}
+
+#custom-reboot {
+  color: @green;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 10px;
+  background-color: @surface0
+}
+
+#custom-poweroff {
+  color: @red;
+  margin: 3px 3px 3px 0px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 15px 0px 10px;
+  background-color: @surface0
+}
+
+/* Audio thing combination (i should prob use wp for the sink as well) */
+
+#pulseaudio{
+  color: @yellow;
+  margin: 3px 0px 3px 3px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 7.5px 0px 15px;
+  background-color: @surface0
+}
+
+#wireplumber{
+  color: @peach;
+  margin: 3px 3px 3px 0px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 15px 0px 7.5px;
+  background-color: @surface0
+}
+
+
