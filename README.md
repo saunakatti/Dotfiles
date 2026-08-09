@@ -25,6 +25,7 @@ I've left some configs (mainly ones that I haven't changed much) out of here. I'
 - **rofi** – menu I use mainly for apps, windows and emojis
 - **wayle** – desktop shell I use for top bar, notifications and OSD
 - **yazi** – file manager (terminal)
+- **starship.toml** – customize shell prompt
 - **waybar** – top bar (unused, using Wayle instead)
 
 > [!WARNING]
