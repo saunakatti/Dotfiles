@@ -24,31 +24,29 @@ button-group-rounding = "none"
 monitor = "*"
 show = true
 left = [
-    "hyprland-workspaces",
-    { name = "group", modules = [
-        "custom-power",
-        "custom-reboot",
-        "custom-lock",
-    ] },
-    "custom-uptime",
-    "media",
+  "hyprland-workspaces",
+  { name = "group", modules = [
+    "custom-power",
+    "custom-reboot",
+    "custom-lock",
+  ] },
+  "custom-uptime",
+  "media",
 ]
-center = [
-    "window-title",
-]
+center = ["window-title"]
 right = [
-    "cpu",
-    "network",
-    "hyprsunset",
-    { name = "group", modules = [
+  "cpu",
+  "network",
+  "hyprsunset",
+  { name = "group", modules = [
     "volume",
     "microphone",
-] },
-    "systray",
-    "weather",
-    "clock",
-    "notifications",
-] 
+  ] },
+  "systray",
+  "weather",
+  "clock",
+  "notifications",
+]
 
 [styling]
 rounding = "none"
@@ -99,7 +97,7 @@ display-mode = "label"
 show-special = true
 
 [modules.hyprland-workspaces.workspace-map]
--98 = { label = "S", icon = "ld-scratch-symbolic", active-color = "accent"}
+-98 = { label = "S", icon = "ld-scratch-symbolic", active-color = "accent" }
 
 [[modules.custom]]
 id = "uptime"
@@ -135,8 +133,8 @@ icon-color = "accent"
 icon-bg-color = "accent"
 label-color = "accent"
 label-max-length = 50
-player-priority = [ "quodlibet", "mpd", "spotify" ]
-players-ignored = [ "chromium", "discord", "firefox" ]
+player-priority = ["quodlibet", "spotify", "mpd"]
+players-ignored = ["chromium", "discord", "firefox"]
 left-click = "wayle media play-pause"
 right-click = "dropdown:media"
 
@@ -180,4 +178,3 @@ right-click = "firefox --new-window https://www.ilmatieteenlaitos.fi/saa/turku"
 
 [wallpaper]
 engine-enabled = false
-
