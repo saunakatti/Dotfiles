@@ -4,6 +4,9 @@ Some of my configs. I manage them with [GNU Stow](https://www.gnu.org/software/s
 
 I've left some configs (mainly ones that I haven't changed much) out of here. I'm also aware that many of the configs are in desperate need of cleaning up. Many of the configs are modified versions of default configs with unnecessary comment lines.
 
+> [!IMPORTANT]
+> For most icons to work correctly, you should have a [Nerd Font](https://github.com/ryanoasis/nerd-fonts) installed. My configs use **Noto Sans Nerd Font** as the sans-serif font and **JetBrains Mono Nerd Font** as the monospace font.
+
 ---
 
 ## List of included configs
