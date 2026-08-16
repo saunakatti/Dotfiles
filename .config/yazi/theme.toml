@@ -1,3 +1,10 @@
 [flavor]
 dark = "catppuccin-mocha"
 light = "catppuccin-mocha"
+
+[icon]
+prepend_dirs = [
+  { name = "Notes", text = "󰠮", fg = "#94e2d5" },
+  { name = "Backups", text = "󰁯", fg = "#94e2d5" },
+  { name = "Dotfiles", text = "", fg = "#f5c2e7" },
+]
