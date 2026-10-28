@@ -7,7 +7,10 @@ return {
       wiki_dirs = {
         -- neowiki.nvim supports both absolute and tilde-expanded paths
         { name = "Personal", path = "~/Notes/personal/wiki/" },
+        { name = "Worldbuild Project", path = "/mnt/OniUSB/My_Files/Galaksit/Galaxies_Revamp/" },
       },
+      discover_nested_roots = true,
+      index_file = "index.md",
     },
     keys = {
       { "<leader>ww", "<cmd>lua require('neowiki').open_wiki()<cr>", desc = "Open Wiki" },

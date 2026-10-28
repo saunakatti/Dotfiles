@@ -38,7 +38,7 @@ hl.monitor({
 local terminal = "kitty"
 local fileManager = "kitty --hold yazi"
 local menu = "rofi -show drun"
-local browser = "firefox"
+local browser = "librewolf"
 local lockscreen = "hyprlock"
 local screenshot = 'grim -g "$(slurp)" - | swappy -f -'
 local screenshotcopy = 'grim -g "$(slurp -d)" - | wl-copy'
@@ -57,7 +57,7 @@ local musicplayer = "kitty -e rmpc"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --all")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
-	hl.exec_cmd("awww-daemon & hypridle")
+	hl.exec_cmd("awww-daemon & hypridle & hyprsunset")
 	hl.exec_cmd("sleep 2 && wayle shell")
 	hl.exec_cmd("sleep 5 && vesktop -m")
 end)
@@ -300,6 +300,7 @@ for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + ALT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- Move workspace to another ws with arrow keys
@@ -372,6 +373,11 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- Tablet controls
+hl.bind("KP_End", hl.dsp.exec_cmd("otd setoutputmode 'Huion H951P' 'OpenTabletDriver.Desktop.Output.AbsoluteMode'")) -- KP1
+hl.bind("KP_Down", hl.dsp.exec_cmd("otd setoutputmode 'Huion H951P' 'OpenTabletDriver.Desktop.Output.LinuxArtistMode'")) -- KP2
+hl.bind("KP_Next", hl.dsp.exec_cmd("otd setoutputmode 'Huion H951P' 'OpenTabletDriver.Desktop.Output.RelativeMode'")) -- KP3
 
 -- Vesktop (and Fluxer at some point?) keybind workaround
 
